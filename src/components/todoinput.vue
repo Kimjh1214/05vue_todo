@@ -20,8 +20,8 @@ export default {
         addTodo(){
             console.log(this.newTodoItem);
             let value = this.newTodoItem;
-            localStorage.setItem(value,value);
-            // this.$emit('addTodo',value);
+            // localStorage.setItem(value,value);
+            this.$emit('addTodo',value);
             this.clearInput();
         },
         clearInput(){
@@ -47,7 +47,6 @@ export default {
     .addContainer{
         float: right;
         background:linear-gradient(to right,#6478fd,#8763fb);
-        display: inline-block;
         width: 3rem;
         height: 50px;
         border-radius: 0 5px 5px 0;
