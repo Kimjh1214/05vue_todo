@@ -2,7 +2,7 @@
   <todoheader></todoheader>
   <todoinput @addTodo="addTodo"/>
   <todolist :todoItems="todoItems" @removeTodo="removeTodo"/>
-  <todofooter />
+  <todofooter @clearTodo="clearTodo"/>
 </template>
 
 <script>
@@ -45,6 +45,10 @@ export default {
     removeTodo(todoItem,index){
       localStorage.removeItem(todoItem)
       this.todoItems.splice(index,1)
+    },
+    clearTodo(){
+      localStorage.clear()
+      this.todoItems=[]
     }
   }
 }
